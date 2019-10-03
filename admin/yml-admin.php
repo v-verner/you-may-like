@@ -10,9 +10,9 @@ function yml_menu_options() {
 		wp_die( "Você não tem permissões suficientes para editar esta página" );
 	}
    echo "
-   <h1>Opa!</h1>
-   <p>Aqui é onde você irá definir algumas opções para o funcionamento do plugin <strong>You May Like</strong>.</p>
-   <p>Para que a listagem de posts relacionados ao usuário fique visível, lembre-se de usar o shortcode: </p>
+   <h1>Hey!</h1>
+   <p> This is where you will set some options for the <strong> You May Like </strong> plugin to work. </p>
+   <p>To make the listing of user-related posts visible, remember to use shortcode: </p>
    <h4>[you_may_like]</h4>
 
    <form method='POST' action='options.php'>
@@ -23,44 +23,44 @@ function yml_menu_options() {
       echo "
       <table class='form-table'>
          <tr valign='top'>
-            <th scope='row'>Vida útil das preferências</th>
+            <th scope='row'>Preference lifetime</th>
             <td>
-               <input type='text' name='yml-dias_expiracao' value='". get_option('yml-dias_expiracao') ."' />
-               <p class='description' id='dias_expiracao-description'>Informe após quantos dias sem visita no site o cookie de sugestões deve ser apagado. </p>
-               <p class='description'><strong>Recomendado:</strong> 30 dias.</p>
+               <input type='text' name='yml-days_expiration' value='". get_option('yml-days_expiration') ."' />
+               <p class='description' id='days_expiration-description'>Please inform after how many days without visiting the site the suggestion cookie should be deleted. </p>
+               <p class='description'><strong>Recommended:</strong> 30 days.</p>
             </td>
          </tr>
          <tr valign='top'>
-            <th scope='row'>Começar indicações a partir de quantas visualizações?</th>
+            <th scope='row'>Start recommending posts from how many views?</th>
             <td>
-               <input type='text' name='yml-comecar_indicacoes' value='". get_option('yml-comecar_indicacoes') ."' />
-               <p class='description' id='comecar_indicacoes-description'>Informe a quantidade de corte de visualizações para a recomendação.</p>
-               <p class='description'><strong>Recomendado:</strong> 10 visualizações.</p>
+               <input type='text' name='yml-start_indications' value='". get_option('yml-start_indications') ."' />
+               <p class='description' id='start_indications-description'>Enter the amount of view cropping for the recommendation.</p>
+               <p class='description'><strong>Recommended:</strong> 10 views.</p>
             </td>
          </tr>
          <tr valign='top'>
-            <th scope='row'>Usar as preferencias de até quantas tags para recomendar o conteúdo?</th>
+            <th scope='row'>Use preferences from up to how many tags to recommend content?</th>
             <td>
-               <input type='text' name='yml-limite_tags' value='". get_option('yml-limite_tags') ."' />
-               <p class='description' id='limite_tags-description'>O YML fará o cruzamento das tags mais lidas pelo cliente. Neste campo você informa até quantos cruzamentos você gostaria de fazer.</p>
-               <p class='description'><strong>Recomendado:</strong> 4 cruzamentos. Para blogs grandes (mais de 200 posts), diminua a quantidade de cruzamentos para otimizar a velocidade.</p>
+               <input type='text' name='yml-tags_limit' value='". get_option('yml-tags_limit') ."' />
+               <p class='description' id='tags_limit-description'>YML will cross over the tags most read by the customer. In this field you can even tell how many intersections you would like to make.</p>
+               <p class='description'><strong>Recommended:</strong> 4 cross over. For large blogs (over 200 posts), decrease the number of crossovers to optimize speed.</p>
             </td>
          </tr>
          <tr valign='top'>
-            <th scope='row'>Pontuação extra para tag atual</th>
+            <th scope='row'>Extra score for current tag</th>
             <td>
-               <input type='text' name='yml-pontos_extra' value='". get_option('yml-pontos_extra') ."' />
-               <p class='description' id='limite_tags-description'>Para melhorar ainda mais a recomendação,  você pode estipular um valor de pontuação extra para posts com as mesmas tags do post atual.</p>
-               <p class='description'><strong>Recomendado:</strong> 10 pontos</p>
+               <input type='text' name='yml-extra_points' value='". get_option('yml-extra_points') ."' />
+               <p class='description' id='extra_points-description'>To further improve the recommendation, you can set an extra point value for posts with the same tags as the current post.</p>
+               <p class='description'><strong>Recommended:</strong> 4 points</p>
             </td>
          </tr>
       </table>
 
       <input type='hidden' name='action' value='update' />
-      <input type='hidden' name='page_options' value='yml-dias_expiracao' />
-      <input type='hidden' name='page_options' value='yml-comecar_indicacoes' />
-      <input type='hidden' name='page_options' value='yml-limite_tags' />
-      <input type='hidden' name='page_options' value='yml-pontos_extra' />
+      <input type='hidden' name='page_options' value='yml-days_expiration' />
+      <input type='hidden' name='page_options' value='yml-start_indications' />
+      <input type='hidden' name='page_options' value='yml-tags_limit' />
+      <input type='hidden' name='page_options' value='yml-extra_points' />
 
       <p class='submit'>
          <input type='submit' class='button-primary' value='Salvar' />

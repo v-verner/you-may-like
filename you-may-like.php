@@ -2,7 +2,7 @@
 /*
  Plugin Name:   You May Like
  Plugin URI:    https://vverner.com/you-may-like
- Description:   Um plugin simples que recomenda conteúdos com base nas visualizações anteriores do usuário. Para mais informações sobre o plugin, acesse <a href="https://vverner.com/plugin-para-recomendacao-de-posts-you-may-like/" target="_blank">este link</a>.
+ Description:   A simple plugin that recommends content based on previous user views. For more information about the plugin, visit <a href="https://vverner.com/plugin-para-recomendacao-de-posts-you-may-like/" target="_blank">this link.</a>.
  Author:        VVerner
  Version:       1
  Author URI:    https://vverner.com

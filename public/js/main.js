@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
-   // Funções de apoio
-   // Pegar Cookie
+   // Function to get the value of the cookie
    function getCookie(cname) {
       var name = cname + "=";
       var decodedCookie = decodeURIComponent(document.cookie);
@@ -17,8 +16,8 @@ jQuery(document).ready(function ($) {
       return "";
    }
 
-   // Variáveis passadas pelas função de enqueue
-   var dias_expiracao = yml_params.dias_expiracao;
+   // Variables passed by the enqueue function
+   var days_expiration = yml_params.days_expiration;
    var post_tags =  JSON.parse(yml_params.post_tags);
 
    // Workers
@@ -44,8 +43,7 @@ jQuery(document).ready(function ($) {
    });
 
    var d = new Date();
-   d.setTime(d.getTime() + (dias_expiracao * 24 * 60 * 60 * 1000));
+   d.setTime(d.getTime() + (days_expiration * 24 * 60 * 60 * 1000));
    var expires = "expires="+d.toUTCString();
    document.cookie = "yml-post_tags=" + JSON.stringify(yml_tags_update) + ";" + expires + ";";
-
 });

@@ -1,11 +1,11 @@
 <?php
 /**
- * Este arquivo fará todas as funções públicas e integrações necessárias no frontend do site
+ * This file will do all the necessary public functions and integrations on the site frontend.
  */
 
 function yml_scripts()
 {
-   # Nesta versão, apenas posts padrão do WP serão usados, então em outras páginas não há necessidade de aparecer
+   # In this release, only standard WP posts will be used, so other post types need not be considered.
    if( ! is_singular("post") ) return;
 
    $tags = get_the_tags();
@@ -22,7 +22,7 @@ function yml_scripts()
    wp_register_script('yml-main', YML_URL . 'public/js/main.js', array('jquery'), false, true);
    wp_localize_script('yml-main', 'yml_params', array(
       'post_tags' => json_encode($tags_arr),
-      'dias_expiracao' => get_option('yml-dias_expiracao')
+      'days_expiration' => get_option('yml-days_expiration')
    ));
    wp_enqueue_script('yml-main');
 
