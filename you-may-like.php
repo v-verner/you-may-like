@@ -4,7 +4,7 @@
  Plugin URI:    https://vverner.com/you-may-like
  Description:   A personalized content recommendation system for every reader of your blog. Simple but powerful. For more information, <a href="https://vverner.com/plugin-para-recomendacao-de-posts-you-may-like/" target="_blank">read this article</a>.
  Author:        VVerner
- Version:       1
+ Version:       1.0.1
  Author URI:    https://vverner.com
  License:       GPL v2 or later
  License URI:   https://www.gnu.org/licenses/gpl-2.0.html
