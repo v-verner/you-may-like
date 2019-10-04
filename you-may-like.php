@@ -2,7 +2,7 @@
 /*
  Plugin Name:   You May Like
  Plugin URI:    https://vverner.com/you-may-like
- Description:   A simple plugin that recommends content based on previous user views. For more information about the plugin, visit <a href="https://vverner.com/plugin-para-recomendacao-de-posts-you-may-like/" target="_blank">this link.</a>.
+ Description:   A personalized content recommendation system for every reader of your blog. Simple but powerful. For more information, <a href="https://vverner.com/plugin-para-recomendacao-de-posts-you-may-like/" target="_blank">read this article</a>.
  Author:        VVerner
  Version:       1
  Author URI:    https://vverner.com
@@ -30,7 +30,8 @@ define( 'YML_PATH', plugin_dir_path( __FILE__ ) );
 define( 'YML_URL', plugin_dir_url( __FILE__ ) );
 
 
-include(YML_PATH . "/admin/yml-admin.php");
+include(YML_PATH . "/admin/yml-init.php");
+register_activation_hook(__FILE__, 'yml_activation');
 
 include(YML_PATH . "/public/yml-public.php");
 include(YML_PATH . "/public/yml-shortcodes.php");

@@ -16,7 +16,6 @@ function yml_related_posts( $atts )
    $min_views = get_option('yml-start_indications');
    $limit = get_option('yml-tags_limit');
    $bonus_score = get_option('yml-extra_points');
-   $counter = 0;
 
    $tags_ids = [];
    foreach($tags as $id => $value){
@@ -25,9 +24,8 @@ function yml_related_posts( $atts )
 
       array_push($tags_ids, $id);
       
-      if ( $counter > $limit ) break;
+      if ( count($tags_ids) == $limit ) break;
       
-      $counter++;
    }
 
    $recommendations = get_posts([
@@ -77,7 +75,7 @@ function yml_related_posts( $atts )
    foreach($rank as $post_ID => $points){
       if($opt['match'] == "true"){
          $match_calc = number_format(( $points / $total ) * 100, 0, ",",".");
-         $match = "($match_calc% relevante!)";
+         $match = "(" . $match_calc . __("% match!", "you-may-like") . ")";
       } else {
          $match = "";
       }
