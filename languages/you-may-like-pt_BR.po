@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: You May Like\n"
+"POT-Creation-Date: 2019-10-08 10:32-0300\n"
+"PO-Revision-Date: 2019-10-08 10:39-0300\n"
+"Language-Team: vverner\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: languages\n"
+
+#: admin/yml-admin.php:5
+msgid "YML Settings"
+msgstr "YML Configurações"
+
+#: admin/yml-admin.php:12
+msgid "You do not have sufficient permissions to edit this page."
+msgstr "Você não tem permissões suficientes para editar esta página."
+
+#: admin/yml-admin.php:22
+msgid "Hey!"
+msgstr "Opa!"
+
+#: admin/yml-admin.php:23
+msgid ""
+"On this page you will make the necessary settings for the You May Like "
+"plugin to work according to your needs."
+msgstr ""
+"Nesta página você fará as configurações necessárias para o plugin You May "
+"Like funcione corretamente."
+
+#: admin/yml-admin.php:24
+msgid ""
+"Remember that for the recommended post listing to appear, you need to use "
+"the shortcode below in your sidebar and / or post content. "
+msgstr ""
+"Lembre-se de que para a recomendação de posts apareça, você precisa inserir "
+"o shortcode abaixo na sua barra latera ou dentro do conteúdo do seu post. "
+
+#: admin/yml-admin.php:33
+msgid "Cookie validity"
+msgstr "Validade do Cookie"
+
+#: admin/yml-admin.php:36
+msgid ""
+"After how many days without visiting your site, should the recommendation "
+"cookie be deleted from the visitor's computer?"
+msgstr ""
+"Depois de quantos dias sem visita ao site, o cookie de recomendação deve "
+"ser deletado do computador do visitante?"
+
+#: admin/yml-admin.php:37 admin/yml-admin.php:45 admin/yml-admin.php:53
+#: admin/yml-admin.php:61
+msgid "Recommended:"
+msgstr "Recomendado:"
+
+#: admin/yml-admin.php:37
+msgid "180 days"
+msgstr "180 dias"
+
+#: admin/yml-admin.php:41
+msgid "Minimal user interest in subject"
+msgstr "Interesse mínimo do usuário"
+
+#: admin/yml-admin.php:44
+msgid ""
+"After how many user readings on the same subject, consider the subject for "
+"making post recommendations?"
+msgstr ""
+"Depois de quantas leituras sobre o mesmo assunto, ele deve ser usado para "
+"as recomendações de posts?"
+
+#: admin/yml-admin.php:45
+msgid "10 views"
+msgstr "10 visualizações"
+
+#: admin/yml-admin.php:49
+msgid "How many subjects to use to recommend content to visitors?"
+msgstr "Quantos assuntos usar para recomendar conteúdo as visitantes?"
+
+#: admin/yml-admin.php:52
+msgid ""
+"In order to recommend the correct content to the reader, will YML consider "
+"how many subjects of his 'preference ranking'? (Starting from the preferred "
+"subject to what is in the position indicated in this field)"
+msgstr ""
+"Para que a recomendação de conteúdo ao leitor se precisa, o YML considerará "
+"quantos assuntos do 'ranking de preferencia'? ( Começando do assunto "
+"preferido do leitor, até a posição indicada neste campo)"
+
+#: admin/yml-admin.php:53
+msgid ""
+"Up to 5 position. For large blogs (over 300 posts), reduce this number to "
+"optimize query speed."
+msgstr ""
+"Até a 5ª posição. Para grandes blogs ( mais de 300 posts ), reduza este "
+"número para otimizar a velocidade."
+
+#: admin/yml-admin.php:57
+msgid "Extra score for current tag"
+msgstr "Pontuação extra para o assunto atual"
+
+#: admin/yml-admin.php:60
+msgid ""
+"To further improve the recommendation, you can set an extra point value for "
+"posts with the same tags as the current post."
+msgstr ""
+"Para melhorar a recomendação, você pode definir um valor de pontuação extra "
+"para posts com o mesmo assunto do post atual."
+
+#: admin/yml-admin.php:61
+msgid "5 points"
+msgstr "5 pontos"
+
+#: admin/yml-admin.php:73
+msgid "Save"
+msgstr "Salvar"
+
+#: admin/yml-init.php:28
+msgid "You are Awesome!"
+msgstr "Você é demais!"
+
+#: admin/yml-init.php:29
+msgid ""
+"Thank you for using You May Like! Now you need to configure a few things on "
+"the settings page. You can find it in the sidebar menu under wp-admin."
+msgstr ""
+"Obrigado por usar o You May Like! Agora você precisa configurar algumas "
+"coisas na página de configurações. Você pode encontra-las no menu lateral "
+"do wp-admin."
+
+#: admin/yml-init.php:30
+msgid ""
+"If you have any questions, read <a href='https://vverner.com/plugin-para-"
+"recomendacao-de-posts-you-may-like/' target='_blank'> this article<a>."
+msgstr ""
+"Se você tiver qualquer dúvida, leia <a href='https://vverner.com/plugin-"
+"para-recomendacao-de-posts-you-may-like/' target='_blank'>este artigo<a>."
+
+#: public/yml-shortcodes.php:78
+msgid "% match!"
+msgstr "% relevante!"

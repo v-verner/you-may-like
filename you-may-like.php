@@ -25,11 +25,17 @@
  along with You May Like. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
  */
 
-
+# Globals
 define( 'YML_PATH', plugin_dir_path( __FILE__ ) );
 define( 'YML_URL', plugin_dir_url( __FILE__ ) );
 
+# Translations
+function yml_load_translations() {
+   load_plugin_textdomain( 'you-may-like', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
+add_action( 'init', 'yml_load_translations' );
 
+# Includes
 include(YML_PATH . "/admin/yml-init.php");
 register_activation_hook(__FILE__, 'yml_activation');
 
