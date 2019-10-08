@@ -7,6 +7,6 @@ ul.yml-list {
    border-bottom: solid 1px #d7d7d7;
 }
 
-.yml-list .yml-item:last-child{
+.yml-list .yml-item:last-child {
    border-bottom-width: 0;
 }

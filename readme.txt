@@ -50,10 +50,19 @@ Open a support ticket and I will respond as soon as possible.
 
 == Changelog ==
 
+= 1.1 =
+* A major transformation in the plugin, without the need for JS to update the cookie, security update and also the addition of a cookie suffix to make each site unique. In addition, it was finally adjusted to receive translations.
+
+= 1.0.1 =
+* Some code updates
+
 = 1.0 =
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.1 =
+* In this update, the user preferences write cookie has been modified and previously collected data has been reset.
 
 = 1.0 =
 * Initial Release

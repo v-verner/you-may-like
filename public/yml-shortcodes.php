@@ -1,15 +1,20 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
-function yml_related_posts( $atts )
+/**
+ * This file creates all shortcodes for user
+ */
+
+function yml_related_posts($atts)
 {
-   if(is_admin()) return;
+   if (is_admin()) return;
 
-   $opt = shortcode_atts( array(
+   $opt = shortcode_atts(array(
       'limit' => 5,
       'match'  => "true"
-	), $atts );
-   
-   $tags = (array) json_decode( stripslashes( $_COOKIE["yml-post_tags"] ) );
+   ), $atts);
+
+   $tags = (array) json_decode(stripslashes($_COOKIE["yml-" . YML_SUFFIX]));
 
    arsort($tags, SORT_NUMERIC);
 
@@ -18,14 +23,13 @@ function yml_related_posts( $atts )
    $bonus_score = get_option('yml-extra_points');
 
    $tags_ids = [];
-   foreach($tags as $id => $value){
+   foreach ($tags as $id => $value) {
 
-      if($value < $min_views) continue;
+      if ($value < $min_views) continue;
 
       array_push($tags_ids, $id);
-      
-      if ( count($tags_ids) == $limit ) break;
-      
+
+      if (count($tags_ids) == $limit) break;
    }
 
    $recommendations = get_posts([
@@ -37,25 +41,26 @@ function yml_related_posts( $atts )
 
    $rank = [];
 
-   foreach($recommendations as $recommendation){
+   foreach ($recommendations as $recommendation) {
 
       $score = $limit + 1;
 
       $rank[(string) $recommendation->ID] = 0;
 
-      foreach( $tags_ids as $tag_id ){
+      foreach ($tags_ids as $tag_id) {
 
-         if( has_tag( $tag_id , $recommendation ) ) {
-            $rank[(string) $recommendation->ID] += $score; 
+         if (has_tag($tag_id, $recommendation)) {
+            $rank[(string) $recommendation->ID] += $score;
          }
          $score--;
-
       }
 
-      foreach($current_post_tags as $current_tag ){
-         if( has_tag( $current_tag->term_id , $recommendation ) ) {
-            $rank[(string) $recommendation->ID] += $bonus_score; 
-         }        
+      if (!$current_post_tags) continue;
+
+      foreach ($current_post_tags as $current_tag) {
+         if (has_tag($current_tag->term_id, $recommendation)) {
+            $rank[(string) $recommendation->ID] += $bonus_score;
+         }
       }
    }
 
@@ -66,25 +71,25 @@ function yml_related_posts( $atts )
    $html = "<ul class='yml-list'>";
    $total = 0;
 
-   if($opt['match'] == "true"){
-      foreach($rank as $post_ID => $points){
+   if ($opt['match'] == "true") {
+      foreach ($rank as $post_ID => $points) {
          $total += $points;
       }
    }
 
-   foreach($rank as $post_ID => $points){
-      if($opt['match'] == "true"){
-         $match_calc = number_format(( $points / $total ) * 100, 0, ",",".");
+   foreach ($rank as $post_ID => $points) {
+
+      if ($opt['match'] == "true") {
+         $match_calc = number_format(($points / $total) * 100, 0, ",", ".");
          $match = "(" . $match_calc . __("% match!", "you-may-like") . ")";
       } else {
          $match = "";
       }
-      $html .= "<li class='yml-item'><a class='yml-link' href='".get_the_permalink( $post_ID )."'>". get_the_title( $post_ID ) . "</a> ".$match."</li>";
+      $html .= "<li class='yml-item'><a class='yml-link' href='" . get_the_permalink($post_ID) . "'>" . get_the_title($post_ID) . "</a> " . $match . "</li>";
    }
 
    $html .= "</ul>";
 
    return $html;
-
 }
-add_shortcode( "you_may_like", "yml_related_posts" );
+add_shortcode("you_may_like", "yml_related_posts");
